@@ -1,0 +1,8 @@
+{
+  "root": ".",
+  "depth": "file",
+  "languages": ["ts"],
+  "map": { "nodes": [] },
+  "blocks": { "blocks": [] },
+  "about": { "says": "a tiny app", "from": "README.md" }
+}

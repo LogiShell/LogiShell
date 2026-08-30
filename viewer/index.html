@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lsh scan</title>
+<style>
+  body { margin: 2rem auto; max-width: 44rem; font: 16px/1.45 system-ui, sans-serif; color: #1b1b1b; }
+  .says { font-size: 1.25rem; }
+  .meta { color: #555; }
+</style>
+<h1>lsh scan</h1>
+<p id="says" class="says"></p>
+<p id="meta" class="meta"></p>
+<script type="application/json" id="scan-data">null</script>
+<script>
+  const el = document.getElementById('scan-data');
+  const boot = (doc) => {
+    const says = (doc.about && doc.about.says) || (doc.About && doc.About.Says) || '';
+    document.getElementById('says').textContent = says ? ('It says of itself: ' + says) : 'No about text in this report.';
+    const langs = doc.languages || doc.Languages || [];
+    const nodes = (doc.map && doc.map.nodes) || (doc.Map && doc.Map.Nodes) || [];
+    document.getElementById('meta').textContent = langs.join(', ') + ' · ' + nodes.length + ' nodes';
+  };
+  const inline = JSON.parse(el.textContent);
+  if (inline) boot(inline);
+  else fetch('../examples/scan.json').then((r) => r.json()).then(boot);
+</script>
+</html>
