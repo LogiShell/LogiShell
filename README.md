@@ -1,15 +1,31 @@
 # LogiShell
 
-`lsh` is a CLI. Point it at a repository, get a map an agent can read.
+**LogiShell** (also written **Logi Shell**) is one working shell for the age of AI.
+It wraps any model and any harness behind a single workspace: local models for
+private and light work, cloud models for heavy work, always on your own keys and
+with no vendor lock.
+
+- Site: <https://logishell.com>
+- What an AI shell is: <https://logishell.com/ai-shell/>
+- Docs: <https://docs.logishell.com>
+- Package: <https://www.npmjs.com/package/logishell>
+
+## `lsh`: the public CLI
+
+Point it at a repository and get a map an agent can read.
 
 ```bash
 npx logishell scan .
-curl -fsSL https://logishell.com/lsh.sh | sh
+curl -fsSL https://logishell.com/get | sh
 lsh scan . --open
 ```
 
 `--open` prints the same markdown on stdout and opens the report in a browser.
 
-This repository is the public home: README, issues, and CLI binaries. Product sources (IDE, runner, kernel) stay in a private tree. Binaries in Releases are the same bytes as `https://dl.logishell.com/cli/`.
+## What lives here
+
+This repository is the public home: README, issues and CLI binaries. Product
+sources (shell, runner, kernel) stay in a private tree. Binaries in Releases are
+the same bytes as <https://dl.logishell.com/cli/>.
 
 If the scan helped, star this repo so other people can find it.
