@@ -5,6 +5,7 @@ It wraps any model and any harness behind a single workspace: local models for
 private and light work, cloud models for heavy work, always on your own keys and
 with no vendor lock.
 
+- CLI: <https://lsh.dev>
 - Site: <https://logishell.com>
 - What an AI shell is: <https://logishell.com/ai-shell/>
 - Docs: <https://docs.logishell.com>
@@ -15,8 +16,8 @@ with no vendor lock.
 Point it at a repository and get a map an agent can read.
 
 ```bash
+curl -fsSL lsh.dev | sh
 npx logishell scan .
-curl -fsSL https://logishell.com/get | sh
 lsh scan . --open
 ```
 
